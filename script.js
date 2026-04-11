@@ -2,7 +2,9 @@
 /*  DIGITAL ORIGAMI — Interactive Engine        */
 /* ============================================ */
 
-document.addEventListener('DOMContentLoaded', () => {
+(function() {
+  'use strict';
+
   // ==================== //
   // 1. PRELOADER         //
   // ==================== //
@@ -10,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const preloaderBar = document.querySelector('.preloader-bar-fill');
   const preloaderCounter = document.querySelector('.preloader-counter');
   let loadProgress = 0;
+  let preloaderDone = false;
 
   const preloaderInterval = setInterval(() => {
     loadProgress += Math.random() * 15 + 5;
@@ -18,18 +21,29 @@ document.addEventListener('DOMContentLoaded', () => {
     if (preloaderCounter) preloaderCounter.textContent = Math.floor(loadProgress) + '%';
   }, 150);
 
-  window.addEventListener('load', () => {
+  function finishPreloader() {
+    if (preloaderDone) return;
+    preloaderDone = true;
     clearInterval(preloaderInterval);
     if (preloaderBar) preloaderBar.style.width = '100%';
     if (preloaderCounter) preloaderCounter.textContent = '100%';
     setTimeout(() => {
       if (preloader) preloader.classList.add('loaded');
       document.body.style.overflow = '';
+      document.body.classList.add('page-loaded');
       initScrollReveal();
     }, 600);
-  });
+  }
 
-  document.body.style.overflow = 'hidden';
+  // Handle race condition: load may have already fired
+  if (document.readyState === 'complete') {
+    finishPreloader();
+  } else {
+    window.addEventListener('load', finishPreloader);
+  }
+
+  // Safety timeout: dismiss preloader after 4 seconds no matter what
+  setTimeout(finishPreloader, 4000);
 
   // ==================== //
   // 2. CUSTOM CURSOR     //
@@ -199,7 +213,6 @@ document.addEventListener('DOMContentLoaded', () => {
         this.rotation = Math.random() * Math.PI * 2;
         this.rotSpeed = (Math.random() - 0.5) * 0.015;
         this.color = colors[Math.floor(Math.random() * colors.length)];
-        // Randomly choose triangle or diamond
         this.shape = Math.random() > 0.5 ? 'triangle' : 'diamond';
       }
 
@@ -235,7 +248,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Initialize particles
     for (let i = 0; i < PARTICLE_COUNT; i++) {
       particles.push(new Particle());
     }
@@ -273,7 +285,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
 
-        // Move glare
         if (glare) {
           const glareX = (x / rect.width) * 100;
           const glareY = (y / rect.height) * 100;
@@ -297,7 +308,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==================== //
   // 6. SCROLL REVEAL     //
   // ==================== //
+  let scrollRevealInitialized = false;
+
   function initScrollReveal() {
+    if (scrollRevealInitialized) return;
+    scrollRevealInitialized = true;
+
     const revealElements = document.querySelectorAll('[data-reveal]');
 
     const observer = new IntersectionObserver((entries) => {
@@ -308,8 +324,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }, {
-      threshold: 0.12,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.1,
+      rootMargin: '0px 0px -20px 0px'
     });
 
     revealElements.forEach(el => observer.observe(el));
@@ -341,11 +357,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (video) {
         if (video.paused) {
-          // Pause all other videos first
           document.querySelectorAll('.portfolio-video-wrapper video').forEach(v => {
             if (v !== video) {
               v.pause();
-              v.closest('.portfolio-video-wrapper').querySelector('.video-play-btn').classList.remove('playing');
+              const otherBtn = v.closest('.portfolio-video-wrapper').querySelector('.video-play-btn');
+              if (otherBtn) otherBtn.classList.remove('playing');
             }
           });
 
@@ -359,7 +375,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Reset play button when video ends
   document.querySelectorAll('.portfolio-video-wrapper video').forEach(video => {
     video.addEventListener('ended', () => {
       const btn = video.closest('.portfolio-video-wrapper').querySelector('.video-play-btn');
@@ -436,7 +451,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==================== //
   const contactForm = document.querySelector('.contact-form');
   if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', function() {
       const submitBtn = contactForm.querySelector('.form-submit .btn-primary');
       if (submitBtn) {
         submitBtn.innerHTML = `
@@ -478,17 +493,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', setActiveNav);
 
   // ==================== //
-  // 12. HERO TEXT SPLIT  //
-  // ==================== //
-  // Already handled via CSS animation on .line-inner
-
-  // ==================== //
-  // 13. COUNTER ANIMATE  //
-  // ==================== //
-  // No specific number counters needed — "Many projects delivered"
-
-  // ==================== //
-  // 14. CSS SPIN ANIM    //
+  // 12. INJECTED STYLES  //
   // ==================== //
   const style = document.createElement('style');
   style.textContent = `
@@ -503,4 +508,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   `;
   document.head.appendChild(style);
-});
+
+})();
