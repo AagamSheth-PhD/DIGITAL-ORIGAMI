@@ -1384,8 +1384,8 @@ section {
 }
 
 .stat-ring-center img {
-  width: 40px;
-  height: 40px;
+  width: 56px;
+  height: 56px;
   object-fit: contain;
   filter: drop-shadow(0 0 16px rgba(139, 92, 246, 0.5));
 }
@@ -1720,7 +1720,7 @@ section {
 }
 
 .footer-brand img {
-  height: 44px;
+  height: 60px;
   width: auto;
   margin-bottom: 16px;
 }
