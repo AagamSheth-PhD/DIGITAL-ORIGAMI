@@ -2,7 +2,7 @@
 /*  DIGITAL ORIGAMI — Interactive Engine        */
 /* ============================================ */
 
-(function() {
+(function () {
   'use strict';
 
   // ==================== //
@@ -451,7 +451,7 @@
   // ==================== //
   const contactForm = document.querySelector('.contact-form');
   if (contactForm) {
-    contactForm.addEventListener('submit', function() {
+    contactForm.addEventListener('submit', function () {
       const submitBtn = contactForm.querySelector('.form-submit .btn-primary');
       if (submitBtn) {
         submitBtn.innerHTML = `
