@@ -691,3 +691,696 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Origami — We Fold Ideas Into Digital Reality</title>
+  <meta name="description" content="Digital Origami crafts trendy websites, stunning social media content, reel videos, and Meta ad campaigns — all at reasonable prices, delivered fast.">
+  <meta name="keywords" content="web development, social media marketing, website design, reel videos, meta ads, digital marketing, brand identity">
+  <meta name="author" content="Digital Origami">
+  <meta property="og:title" content="Digital Origami — We Fold Ideas Into Digital Reality">
+  <meta property="og:description" content="Trendy websites, stunning social media, and powerful digital marketing — all at prices that make sense.">
+  <meta property="og:image" content="do.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="do.jpg" type="image/jpeg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+
+  <!-- SVG Gradient Definitions -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <linearGradient id="icon-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#3b82f6"/>
+        <stop offset="100%" stop-color="#8b5cf6"/>
+      </linearGradient>
+      <linearGradient id="icon-grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#8b5cf6"/>
+        <stop offset="100%" stop-color="#d946ef"/>
+      </linearGradient>
+      <linearGradient id="icon-grad-3" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#d946ef"/>
+        <stop offset="100%" stop-color="#ec4899"/>
+      </linearGradient>
+      <linearGradient id="icon-grad-4" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ec4899"/>
+        <stop offset="100%" stop-color="#f97316"/>
+      </linearGradient>
+      <linearGradient id="icon-grad-5" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#f97316"/>
+        <stop offset="100%" stop-color="#f59e0b"/>
+      </linearGradient>
+      <linearGradient id="icon-grad-full" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#3b82f6"/>
+        <stop offset="25%" stop-color="#8b5cf6"/>
+        <stop offset="50%" stop-color="#d946ef"/>
+        <stop offset="75%" stop-color="#ec4899"/>
+        <stop offset="100%" stop-color="#f97316"/>
+      </linearGradient>
+    </defs>
+  </svg>
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-diamond"></div>
+  <div class="cursor-dot"></div>
+
+  <!-- Particles Canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Background Blobs -->
+  <div class="bg-blobs">
+    <div class="bg-blob bg-blob-1"></div>
+    <div class="bg-blob bg-blob-2"></div>
+    <div class="bg-blob bg-blob-3"></div>
+  </div>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <img src="do.jpg" alt="Digital Origami" class="preloader-logo">
+    <div class="preloader-bar-track">
+      <div class="preloader-bar-fill"></div>
+    </div>
+    <div class="preloader-counter">0%</div>
+  </div>
+
+  <!-- ==================== -->
+  <!-- NAVIGATION           -->
+  <!-- ==================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="do.jpg" alt="Digital Origami Logo">
+        <div class="nav-logo-text">
+          ORIGAMI
+          <span>Digital Studio</span>
+        </div>
+      </a>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#process">Process</a>
+        <a href="#contact" class="nav-cta">Let's Talk</a>
+      </div>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==================== -->
+  <!-- HERO SECTION         -->
+  <!-- ==================== -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            Available for Projects
+          </div>
+
+          <h1 class="hero-title">
+            <span class="line"><span class="line-inner">We Fold Ideas</span></span>
+            <span class="line"><span class="line-inner">Into <span class="gradient-text">Digital</span></span></span>
+            <span class="line"><span class="line-inner"><span class="gradient-text">Reality.</span></span></span>
+          </h1>
+
+          <p class="hero-description">
+            Trendy websites, stunning social media, and powerful digital marketing — all at prices that make sense, delivered faster than you'd expect.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#contact" class="btn-primary">
+              Start Your Project
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="#portfolio" class="btn-outline">
+              View Our Work
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-3d-scene">
+          <!-- Glow ring -->
+          <div class="hero-glow-ring"></div>
+
+          <!-- Floating logo -->
+          <div class="hero-logo-float">
+            <img src="do.jpg" alt="Digital Origami">
+          </div>
+
+          <!-- Orbiting geometric shapes -->
+          <div class="float-shape triangle shape-1"></div>
+          <div class="float-shape diamond shape-2"></div>
+          <div class="float-shape triangle shape-3"></div>
+          <div class="float-shape diamond shape-4"></div>
+          <div class="float-shape triangle shape-5"></div>
+          <div class="float-shape diamond shape-6"></div>
+          <div class="float-shape triangle shape-7"></div>
+          <div class="float-shape diamond shape-8"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <hr class="section-separator">
+
+  <!-- ==================== -->
+  <!-- SERVICES SECTION     -->
+  <!-- ==================== -->
+  <section id="services">
+    <div class="container">
+      <div class="services-header" data-reveal>
+        <div class="section-label">What We Create</div>
+        <h2 class="section-title">Crafting Digital Experiences<br>That <span class="gradient-text">Leave Lasting Impressions</span></h2>
+        <p class="section-subtitle">From concept to launch, we build everything your brand needs to dominate the digital world.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1: Web Development -->
+        <div class="service-card" data-reveal data-reveal-delay="1">
+          <div class="card-glare"></div>
+          <div class="service-icon">
+            <svg viewBox="0 0 56 56" fill="none">
+              <rect x="6" y="10" width="44" height="32" rx="4" stroke="url(#icon-grad-1)" stroke-width="2.5"/>
+              <path d="M6 38h44" stroke="url(#icon-grad-1)" stroke-width="2.5"/>
+              <path d="M22 20l-6 8 6 8" stroke="url(#icon-grad-1)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M34 20l6 8-6 8" stroke="url(#icon-grad-1)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="28" y1="46" x2="28" y2="42" stroke="url(#icon-grad-1)" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="22" y1="46" x2="34" y2="46" stroke="url(#icon-grad-1)" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Website Development</h3>
+          <p>Trendy, responsive websites that make your brand unforgettable. Built with modern tech, delivered at lightning speed.</p>
+        </div>
+
+        <!-- Service 2: Social Media Marketing -->
+        <div class="service-card" data-reveal data-reveal-delay="2">
+          <div class="card-glare"></div>
+          <div class="service-icon">
+            <svg viewBox="0 0 56 56" fill="none">
+              <circle cx="40" cy="14" r="6" stroke="url(#icon-grad-2)" stroke-width="2.5"/>
+              <circle cx="14" cy="28" r="6" stroke="url(#icon-grad-2)" stroke-width="2.5"/>
+              <circle cx="40" cy="42" r="6" stroke="url(#icon-grad-2)" stroke-width="2.5"/>
+              <line x1="20" y1="25" x2="34" y2="17" stroke="url(#icon-grad-2)" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="20" y1="31" x2="34" y2="39" stroke="url(#icon-grad-2)" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Social Media Marketing</h3>
+          <p>Strategic content planning with professional photos and banners that grow your following and drive real engagement.</p>
+        </div>
+
+        <!-- Service 3: Reel Video Production -->
+        <div class="service-card" data-reveal data-reveal-delay="3">
+          <div class="card-glare"></div>
+          <div class="service-icon">
+            <svg viewBox="0 0 56 56" fill="none">
+              <rect x="8" y="12" width="40" height="32" rx="4" stroke="url(#icon-grad-3)" stroke-width="2.5"/>
+              <polygon points="24,22 24,38 36,30" fill="url(#icon-grad-3)"/>
+              <circle cx="14" cy="12" r="2" fill="url(#icon-grad-3)"/>
+              <circle cx="20" cy="12" r="2" fill="url(#icon-grad-3)"/>
+              <line x1="8" y1="18" x2="48" y2="18" stroke="url(#icon-grad-3)" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>Reel Video Production</h3>
+          <p>Scroll-stopping reel videos for Instagram and Facebook that capture attention and tell your brand story in seconds.</p>
+        </div>
+      </div>
+
+      <div class="services-bottom-row">
+        <!-- Service 4: Meta Ads -->
+        <div class="service-card" data-reveal data-reveal-delay="4">
+          <div class="card-glare"></div>
+          <div class="service-icon">
+            <svg viewBox="0 0 56 56" fill="none">
+              <circle cx="28" cy="28" r="20" stroke="url(#icon-grad-4)" stroke-width="2.5"/>
+              <circle cx="28" cy="28" r="12" stroke="url(#icon-grad-4)" stroke-width="2.5"/>
+              <circle cx="28" cy="28" r="4" fill="url(#icon-grad-4)"/>
+              <line x1="28" y1="4" x2="28" y2="12" stroke="url(#icon-grad-4)" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="28" y1="44" x2="28" y2="52" stroke="url(#icon-grad-4)" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="4" y1="28" x2="12" y2="28" stroke="url(#icon-grad-4)" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="44" y1="28" x2="52" y2="28" stroke="url(#icon-grad-4)" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Meta Ads Management</h3>
+          <p>Data-driven ad campaigns on Meta platforms that reach your ideal audience and maximize every rupee of your budget.</p>
+        </div>
+
+        <!-- Service 5: Brand Identity -->
+        <div class="service-card" data-reveal data-reveal-delay="5">
+          <div class="card-glare"></div>
+          <div class="service-icon">
+            <svg viewBox="0 0 56 56" fill="none">
+              <polygon points="28,4 50,20 28,52 6,20" stroke="url(#icon-grad-5)" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
+              <line x1="6" y1="20" x2="50" y2="20" stroke="url(#icon-grad-5)" stroke-width="2.5"/>
+              <line x1="28" y1="4" x2="20" y2="20" stroke="url(#icon-grad-5)" stroke-width="2"/>
+              <line x1="28" y1="4" x2="36" y2="20" stroke="url(#icon-grad-5)" stroke-width="2"/>
+              <line x1="20" y1="20" x2="28" y2="52" stroke="url(#icon-grad-5)" stroke-width="2"/>
+              <line x1="36" y1="20" x2="28" y2="52" stroke="url(#icon-grad-5)" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>Brand Identity</h3>
+          <p>Complete digital brand crafting from concept to launch. We don't just build websites — we build digital empires.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-separator">
+
+  <!-- ==================== -->
+  <!-- PORTFOLIO SECTION    -->
+  <!-- ==================== -->
+  <section id="portfolio">
+    <div class="container">
+      <div class="portfolio-header" data-reveal>
+        <div class="section-label">Our Portfolio</div>
+        <h2 class="section-title">Our Work <span class="gradient-text">Speaks.</span></h2>
+        <p class="section-subtitle">A glimpse of what we've crafted. Each project is a masterpiece tailored to perfection.</p>
+      </div>
+
+      <div class="portfolio-grid">
+        <!-- Project 1: NIVVI -->
+        <div class="portfolio-card" data-reveal data-reveal-delay="1">
+          <div class="card-glare"></div>
+          <div class="portfolio-video-wrapper">
+            <video src="nivvi.mp4" muted loop playsinline preload="metadata" poster=""></video>
+            <button class="video-play-btn" aria-label="Play video">
+              <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
+            </button>
+          </div>
+          <div class="portfolio-info">
+            <span class="portfolio-tag">E-Commerce</span>
+            <h3>NIVVI.IN</h3>
+            <p>Premium streetwear brand. Custom e-commerce with collection showcases and WhatsApp ordering.</p>
+          </div>
+        </div>
+
+        <!-- Project 2: Diamond Traders -->
+        <div class="portfolio-card" data-reveal data-reveal-delay="2">
+          <div class="card-glare"></div>
+          <div class="portfolio-video-wrapper">
+            <video src="diamond.mp4" muted loop playsinline preload="metadata" poster=""></video>
+            <button class="video-play-btn" aria-label="Play video">
+              <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
+            </button>
+          </div>
+          <div class="portfolio-info">
+            <span class="portfolio-tag">Business</span>
+            <h3>Diamond Traders</h3>
+            <p>Trusted general store's digital presence. Bilingual design with product categories and direct ordering.</p>
+          </div>
+        </div>
+
+        <!-- Project 3: Tastea -->
+        <div class="portfolio-card" data-reveal data-reveal-delay="3">
+          <div class="card-glare"></div>
+          <div class="portfolio-video-wrapper">
+            <video src="tastea.mp4" muted loop playsinline preload="metadata" poster=""></video>
+            <button class="video-play-btn" aria-label="Play video">
+              <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
+            </button>
+          </div>
+          <div class="portfolio-info">
+            <span class="portfolio-tag">Product Landing</span>
+            <h3>Tastea — Premium Tea</h3>
+            <p>Premium Assam tea brand landing page. Compelling storytelling with direct order CTAs.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="portfolio-note" data-reveal>
+        Many projects delivered. <span>Your brand could be next.</span>
+      </p>
+    </div>
+  </section>
+
+  <hr class="section-separator">
+
+  <!-- ==================== -->
+  <!-- ABOUT SECTION        -->
+  <!-- ==================== -->
+  <section id="about">
+    <div class="container">
+      <div class="about-layout">
+        <div class="about-content">
+          <div class="section-label" data-reveal>Why Digital Origami</div>
+          <h2 class="section-title" data-reveal>Just Like Origami, We Transform<br><span class="gradient-text">Simple Ideas Into Art.</span></h2>
+          <p class="about-text" data-reveal>
+            The art of origami transforms a flat piece of paper into something extraordinary. That's exactly what we do with your ideas — we fold, shape, and craft them into stunning digital experiences that captivate your audience and grow your business.
+          </p>
+
+          <div class="about-pillars">
+            <!-- Pillar 1 -->
+            <div class="pillar" data-reveal data-reveal-delay="1">
+              <div class="pillar-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="url(#icon-grad-1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                </svg>
+              </div>
+              <div>
+                <h4>Trendy Designs</h4>
+                <p>We don't follow trends, we set them. Every project is crafted to stand out in the digital crowd.</p>
+              </div>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="pillar" data-reveal data-reveal-delay="2">
+              <div class="pillar-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="url(#icon-grad-3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12,6 12,12 16,14"/>
+                </svg>
+              </div>
+              <div>
+                <h4>Lightning Fast Delivery</h4>
+                <p>Time is everything. We deliver quality work in record time without cutting corners.</p>
+              </div>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="pillar" data-reveal data-reveal-delay="3">
+              <div class="pillar-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="url(#icon-grad-5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                  <line x1="12" y1="19" x2="12" y2="23"/>
+                  <line x1="8" y1="23" x2="16" y2="23"/>
+                </svg>
+              </div>
+              <div>
+                <h4>Fair & Reasonable Pricing</h4>
+                <p>Premium doesn't mean expensive. We believe great design should be accessible to every business.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual side -->
+        <div class="about-visual" data-reveal="right">
+          <div class="about-stats-ring">
+            <div class="stat-ring-bg"></div>
+            <div class="stat-node">
+              <h4 class="gradient-text">Many</h4>
+              <p>Projects Delivered</p>
+            </div>
+            <div class="stat-node">
+              <h4 class="gradient-text">100%</h4>
+              <p>Client Satisfaction</p>
+            </div>
+            <div class="stat-node">
+              <h4 class="gradient-text">Fast</h4>
+              <p>Turnaround Time</p>
+            </div>
+            <div class="stat-node">
+              <h4 class="gradient-text">Fair</h4>
+              <p>Project Pricing</p>
+            </div>
+            <div class="stat-ring-center">
+              <img src="do.jpg" alt="Digital Origami">
+              <p>Trusted Studio</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-separator">
+
+  <!-- ==================== -->
+  <!-- PROCESS SECTION      -->
+  <!-- ==================== -->
+  <section id="process">
+    <div class="container">
+      <div class="process-header" data-reveal>
+        <div class="section-label">How We Work</div>
+        <h2 class="section-title">From Vision to Reality<br>in <span class="gradient-text">Four Seamless Steps</span></h2>
+        <p class="section-subtitle">Our streamlined process ensures your project is delivered with precision, on time, every time.</p>
+      </div>
+
+      <div class="process-timeline">
+        <!-- Step 1 -->
+        <div class="process-step" data-reveal data-reveal-delay="1">
+          <div class="step-number">
+            <svg viewBox="0 0 36 36" fill="none">
+              <path d="M18 6C11.4 6 6 11.4 6 18s5.4 12 12 12 12-5.4 12-12S24.6 6 18 6z" stroke="url(#icon-grad-1)" stroke-width="2"/>
+              <path d="M18 12v6h4" stroke="url(#icon-grad-1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="18" cy="18" r="2" fill="url(#icon-grad-1)"/>
+            </svg>
+          </div>
+          <h3>Discover</h3>
+          <p>We dive deep into your brand, goals, and vision to understand exactly what you need.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="process-step" data-reveal data-reveal-delay="2">
+          <div class="step-number">
+            <svg viewBox="0 0 36 36" fill="none">
+              <rect x="6" y="6" width="24" height="24" rx="3" stroke="url(#icon-grad-2)" stroke-width="2"/>
+              <path d="M12 18l4 4 8-8" stroke="url(#icon-grad-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Design</h3>
+          <p>We craft stunning mockups and prototypes that bring your vision to life beautifully.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="process-step" data-reveal data-reveal-delay="3">
+          <div class="step-number">
+            <svg viewBox="0 0 36 36" fill="none">
+              <path d="M12 12l-6 6 6 6" stroke="url(#icon-grad-3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M24 12l6 6-6 6" stroke="url(#icon-grad-3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M20 8l-4 20" stroke="url(#icon-grad-3)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Develop</h3>
+          <p>Our team builds your project with clean code and cutting-edge technology.</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="process-step" data-reveal data-reveal-delay="4">
+          <div class="step-number">
+            <svg viewBox="0 0 36 36" fill="none">
+              <path d="M18 6l4 8h8l-6 5 2 9-8-5-8 5 2-9-6-5h8z" stroke="url(#icon-grad-5)" stroke-width="2" fill="none" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Deploy</h3>
+          <p>We launch your project and ensure everything runs flawlessly from day one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-separator">
+
+  <!-- ==================== -->
+  <!-- CONTACT SECTION      -->
+  <!-- ==================== -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-layout">
+        <div class="contact-info">
+          <div class="section-label" data-reveal>Get In Touch</div>
+          <h2 class="section-title" data-reveal>Let's Create Something<br><span class="gradient-text">Amazing Together.</span></h2>
+          <p data-reveal>Got a project in mind? We'd love to hear about it. Reach out and let's turn your ideas into digital masterpieces.</p>
+
+          <div class="contact-methods">
+            <a href="tel:9904077155" class="contact-method" data-reveal data-reveal-delay="1">
+              <div class="contact-method-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="url(#icon-grad-1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Call Us</strong>
+                <span>+91 99040 77155</span>
+              </div>
+            </a>
+
+            <a href="https://wa.me/919904077155?text=Hi%20Digital%20Origami!%20I'm%20interested%20in%20your%20services." class="contact-method" data-reveal data-reveal-delay="2" target="_blank" rel="noopener">
+              <div class="contact-method-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="url(#icon-grad-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+                </svg>
+              </div>
+              <div>
+                <strong>WhatsApp</strong>
+                <span>Quick Response</span>
+              </div>
+            </a>
+
+            <a href="mailto:aagamsheth155@gmail.com" class="contact-method" data-reveal data-reveal-delay="3">
+              <div class="contact-method-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="url(#icon-grad-4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/>
+                  <path d="M22 7l-10 6L2 7"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Email</strong>
+                <span>aagamsheth155@gmail.com</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Social Links -->
+          <div class="contact-socials" data-reveal>
+            <!-- Instagram -->
+            <a href="#" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+              </svg>
+            </a>
+            <!-- Facebook -->
+            <a href="#" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <!-- Twitter/X -->
+            <a href="#" class="social-link" aria-label="Twitter" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="#" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+            <!-- YouTube -->
+            <a href="#" class="social-link" aria-label="YouTube" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper" data-reveal="right">
+          <form class="contact-form" action="https://formsubmit.co/aagamsheth155@gmail.com" method="POST">
+            <!-- FormSubmit Configuration -->
+            <input type="hidden" name="_subject" value="New Inquiry — Digital Origami Website">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="thanks.html">
+            <input type="text" name="_honey" style="display:none">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210">
+              </div>
+              <div class="form-group">
+                <label for="service">Service Needed</label>
+                <input type="text" id="service" name="service" placeholder="Website, Social Media, Ads...">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Tell Us About Your Project</label>
+              <textarea id="message" name="message" placeholder="Describe your project, goals, and timeline..." rows="5" required></textarea>
+            </div>
+
+            <div class="form-submit">
+              <button type="submit" class="btn-primary">
+                Send Message
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"/>
+                  <polygon points="22,2 15,22 11,13 2,9"/>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== -->
+  <!-- FOOTER               -->
+  <!-- ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="do.jpg" alt="Digital Origami">
+          <p>We fold ideas into digital reality. Trendy websites, stunning social media, and powerful marketing — all crafted with precision and passion.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Web Development</a></li>
+            <li><a href="#services">Social Media</a></li>
+            <li><a href="#services">Reel Videos</a></li>
+            <li><a href="#services">Meta Ads</a></li>
+            <li><a href="#services">Brand Identity</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Digital Origami. All rights reserved.</p>
+        <p>Crafted with passion by <a href="#hero">Digital Origami</a></p>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+</html>
