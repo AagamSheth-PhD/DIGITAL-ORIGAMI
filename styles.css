@@ -246,15 +246,15 @@ section {
 /* ==================== */
 /* 5. CUSTOM CURSOR     */
 /* ==================== */
-.cursor-crane {
+.cursor-tri {
   position: fixed;
   top: 0;
   left: 0;
-  width: 28px;
-  height: 28px;
+  width: 20px;
+  height: 20px;
   pointer-events: none;
   z-index: 10001;
-  opacity: 0.9;
+  opacity: 0.85;
   transition: width 0.15s ease-in-out,
               height 0.15s ease-in-out,
               opacity 0.15s ease-in-out,
@@ -262,27 +262,27 @@ section {
   will-change: transform;
 }
 
-.cursor-crane svg {
+.cursor-tri svg {
   width: 100%;
   height: 100%;
   display: block;
 }
 
-.cursor-crane.hovering {
-  width: 36px;
-  height: 36px;
+.cursor-tri.hovering {
+  width: 26px;
+  height: 26px;
   opacity: 1;
-  filter: drop-shadow(0 0 8px #E91E8C);
+  filter: drop-shadow(0 0 6px #E91E8C);
 }
 
-.cursor-crane.clicking {
-  transform: scale(0.85) !important;
-  transition: transform 0.08s ease-in-out;
+.cursor-tri.clicking {
+  transform: scale(0.8) !important;
+  transition: transform 0.1s ease-in-out;
 }
 
 /* Hide cursor on touch devices */
 @media (hover: none), (pointer: coarse) {
-  .cursor-crane { display: none !important; }
+  .cursor-tri { display: none !important; }
   *, *::before, *::after { cursor: auto !important; }
   html, body { cursor: auto; }
 }
