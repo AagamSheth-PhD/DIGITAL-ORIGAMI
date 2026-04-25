@@ -56,9 +56,28 @@
 </head>
 <body>
 
-  <!-- Custom Cursor -->
-  <div class="cursor-diamond"></div>
-  <div class="cursor-dot"></div>
+  <!-- Custom Cursor — Origami Crane -->
+  <div class="cursor-crane" id="cursor-crane">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" fill="none">
+      <defs>
+        <linearGradient id="crane-grad" x1="0%" y1="50%" x2="100%" y2="50%">
+          <stop offset="0%" stop-color="#3B4FD4"/>
+          <stop offset="33%" stop-color="#7B2FBE"/>
+          <stop offset="66%" stop-color="#E91E8C"/>
+          <stop offset="100%" stop-color="#F7931E"/>
+        </linearGradient>
+      </defs>
+      <!-- Origami crane body — polygonal facets -->
+      <polygon points="2,18 14,2 16,12 10,18" fill="url(#crane-grad)" opacity="0.95"/>
+      <polygon points="10,18 16,12 26,10 18,20" fill="url(#crane-grad)" opacity="0.8"/>
+      <polygon points="2,18 10,18 8,26" fill="url(#crane-grad)" opacity="0.7"/>
+      <polygon points="18,20 26,10 24,18" fill="url(#crane-grad)" opacity="0.65"/>
+      <!-- Wing detail lines -->
+      <line x1="14" y1="2" x2="16" y2="12" stroke="rgba(255,255,255,0.25)" stroke-width="0.5"/>
+      <line x1="10" y1="18" x2="16" y2="12" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+      <line x1="16" y1="12" x2="26" y2="10" stroke="rgba(255,255,255,0.15)" stroke-width="0.5"/>
+    </svg>
+  </div>
 
   <!-- Particles Canvas -->
   <canvas id="particles-canvas"></canvas>
