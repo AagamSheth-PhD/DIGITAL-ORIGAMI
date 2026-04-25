@@ -1166,6 +1166,33 @@ section {
   font-size: 0.9rem;
 }
 
+.portfolio-live-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-violet);
+  padding: 8px 20px;
+  border-radius: 50px;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  background: rgba(139, 92, 246, 0.08);
+  transition: all 0.3s var(--ease-out-expo);
+  text-decoration: none;
+}
+
+.portfolio-live-link:hover {
+  background: rgba(139, 92, 246, 0.18);
+  border-color: var(--color-violet);
+  box-shadow: 0 0 24px rgba(139, 92, 246, 0.2);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
 .portfolio-note {
   text-align: center;
   margin-top: 50px;
