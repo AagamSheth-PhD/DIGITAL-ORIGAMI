@@ -48,12 +48,12 @@
   // ==================== //
   // 2. CUSTOM CURSOR     //
   // ==================== //
-  const cursorCrane = document.getElementById('cursor-crane');
+  const cursorTri = document.getElementById('cursor-tri');
   const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-  if (!isTouchDevice && cursorCrane) {
+  if (!isTouchDevice && cursorTri) {
     let mouseX = 0, mouseY = 0;
-    let craneX = 0, craneY = 0;
+    let triX = 0, triY = 0;
 
     document.addEventListener('mousemove', (e) => {
       mouseX = e.clientX;
@@ -61,32 +61,32 @@
     });
 
     // Click animation
-    document.addEventListener('mousedown', () => cursorCrane.classList.add('clicking'));
-    document.addEventListener('mouseup', () => cursorCrane.classList.remove('clicking'));
+    document.addEventListener('mousedown', () => cursorTri.classList.add('clicking'));
+    document.addEventListener('mouseup', () => cursorTri.classList.remove('clicking'));
 
     // Hover detection for interactive elements
     const hoverTargets = 'a, button, input, textarea, .service-card, .portfolio-card, .social-link, .contact-method, .pillar, .video-play-btn, .nav-cta, .btn-primary, .btn-outline, .portfolio-live-link';
 
     document.addEventListener('mouseover', (e) => {
       if (e.target.closest(hoverTargets)) {
-        cursorCrane.classList.add('hovering');
+        cursorTri.classList.add('hovering');
       }
     });
 
     document.addEventListener('mouseout', (e) => {
       if (e.target.closest(hoverTargets)) {
-        cursorCrane.classList.remove('hovering');
+        cursorTri.classList.remove('hovering');
       }
     });
 
     // Smooth cursor animation with lerp
     function animateCursor() {
       const speed = 0.15;
-      craneX += (mouseX - craneX) * speed;
-      craneY += (mouseY - craneY) * speed;
+      triX += (mouseX - triX) * speed;
+      triY += (mouseY - triY) * speed;
 
-      // Offset so the crane's top-left "beak" tip aligns with actual cursor position
-      cursorCrane.style.transform = `translate(${craneX - 2}px, ${craneY - 2}px)`;
+      // Top-left tip of triangle aligns with pointer
+      cursorTri.style.transform = `translate(${triX}px, ${triY}px)`;
 
       requestAnimationFrame(animateCursor);
     }
@@ -94,10 +94,10 @@
 
     // Hide cursor when leaving window
     document.addEventListener('mouseleave', () => {
-      cursorCrane.style.opacity = '0';
+      cursorTri.style.opacity = '0';
     });
     document.addEventListener('mouseenter', () => {
-      cursorCrane.style.opacity = '';
+      cursorTri.style.opacity = '';
     });
   }
 
