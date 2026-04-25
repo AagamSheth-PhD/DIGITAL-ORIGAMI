@@ -48,50 +48,45 @@
   // ==================== //
   // 2. CUSTOM CURSOR     //
   // ==================== //
-  const cursorDiamond = document.querySelector('.cursor-diamond');
-  const cursorDot = document.querySelector('.cursor-dot');
+  const cursorCrane = document.getElementById('cursor-crane');
   const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-  if (!isTouchDevice && cursorDiamond && cursorDot) {
+  if (!isTouchDevice && cursorCrane) {
     let mouseX = 0, mouseY = 0;
-    let diamondX = 0, diamondY = 0;
-    let dotX = 0, dotY = 0;
+    let craneX = 0, craneY = 0;
 
     document.addEventListener('mousemove', (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
     });
 
-    document.addEventListener('mousedown', () => cursorDiamond.classList.add('clicking'));
-    document.addEventListener('mouseup', () => cursorDiamond.classList.remove('clicking'));
+    // Click animation
+    document.addEventListener('mousedown', () => cursorCrane.classList.add('clicking'));
+    document.addEventListener('mouseup', () => cursorCrane.classList.remove('clicking'));
 
     // Hover detection for interactive elements
-    const hoverTargets = 'a, button, input, textarea, .service-card, .portfolio-card, .social-link, .contact-method, .pillar, .video-play-btn, .nav-cta, .btn-primary, .btn-outline';
+    const hoverTargets = 'a, button, input, textarea, .service-card, .portfolio-card, .social-link, .contact-method, .pillar, .video-play-btn, .nav-cta, .btn-primary, .btn-outline, .portfolio-live-link';
 
     document.addEventListener('mouseover', (e) => {
       if (e.target.closest(hoverTargets)) {
-        cursorDiamond.classList.add('hovering');
+        cursorCrane.classList.add('hovering');
       }
     });
 
     document.addEventListener('mouseout', (e) => {
       if (e.target.closest(hoverTargets)) {
-        cursorDiamond.classList.remove('hovering');
+        cursorCrane.classList.remove('hovering');
       }
     });
 
     // Smooth cursor animation with lerp
     function animateCursor() {
-      const diamondSpeed = 0.12;
-      const dotSpeed = 0.6;
+      const speed = 0.15;
+      craneX += (mouseX - craneX) * speed;
+      craneY += (mouseY - craneY) * speed;
 
-      diamondX += (mouseX - diamondX) * diamondSpeed;
-      diamondY += (mouseY - diamondY) * diamondSpeed;
-      dotX += (mouseX - dotX) * dotSpeed;
-      dotY += (mouseY - dotY) * dotSpeed;
-
-      cursorDiamond.style.transform = `translate(${diamondX - 14}px, ${diamondY - 14}px)`;
-      cursorDot.style.transform = `translate(${dotX - 2.5}px, ${dotY - 2.5}px)`;
+      // Offset so the crane's top-left "beak" tip aligns with actual cursor position
+      cursorCrane.style.transform = `translate(${craneX - 2}px, ${craneY - 2}px)`;
 
       requestAnimationFrame(animateCursor);
     }
@@ -99,12 +94,10 @@
 
     // Hide cursor when leaving window
     document.addEventListener('mouseleave', () => {
-      cursorDiamond.style.opacity = '0';
-      cursorDot.style.opacity = '0';
+      cursorCrane.style.opacity = '0';
     });
     document.addEventListener('mouseenter', () => {
-      cursorDiamond.style.opacity = '1';
-      cursorDot.style.opacity = '1';
+      cursorCrane.style.opacity = '';
     });
   }
 
